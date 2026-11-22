@@ -28,6 +28,6 @@ O FIAPP é um sistema web criado para ajudar os usuários a reduzir o desperdíc
    * Acesse `http://localhost/phpmyadmin` (ou abra o MySQL Workbench).
    * Importe o arquivo `.sql` localizado na pasta `banco de dados` deste repositório (ele criará o banco `fiapp` com as tabelas e dados de exemplo).
 4. **Verifique a porta de conexão:**
-   * No arquivo `conexao.php`, a porta configurada é a `3307`. Caso o MySQL do seu computador utilize a porta padrão, altere `$porta = 3307;` para `$porta = 3306;`.
+   * No arquivo `conexao.php`, a porta configurada é a `3307`. Caso o MySQL do seu computador utilize a porta padrão, altere `$porta = 3306;` para `$porta = 3307;`.
 5. **Acesse no navegador:**
    * Abra `http://localhost/fiapp/login.php` e crie uma conta ou utilize um usuário cadastrado no banco.
