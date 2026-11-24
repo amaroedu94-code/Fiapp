@@ -20,7 +20,7 @@ function normalizar($valor) {
 function converter_unidade($quantidade, $unidade) {
     $unidade = normalizar($unidade);
 
-    // grupo de medida => fator para a unidade base (g, ml ou unidade)
+    
     $tabela = [
         "mg" => ["massa", 0.001],
         "g" => ["massa", 1],
@@ -63,7 +63,7 @@ function converter_unidade($quantidade, $unidade) {
         return [$tabela[$unidade][0], (float) $quantidade * $tabela[$unidade][1]];
     }
 
-    // unidade sem conversão conhecida (ex.: pacote): só compara com ela mesma
+    
     return [$unidade, (float) $quantidade];
 }
 
@@ -71,8 +71,7 @@ function dias_para_vencer($validade) {
     return (strtotime($validade) - strtotime(date("Y-m-d"))) / 86400;
 }
 
-// Peso médio (em gramas) de uma unidade de alguns alimentos. Permite comparar
-// receita em "unidade" com estoque em kg/g (e o contrário).
+
 $pesos_medios = [
     "tomate" => 120,
     "maçã" => 150,
@@ -82,8 +81,7 @@ $pesos_medios = [
     "ovo" => 50
 ];
 
-// Converte a quantidade de um lote para o grupo de medida da receita.
-// Retorna null se não for possível converter.
+
 function quantidade_no_grupo($lote, $grupo, $chave) {
     global $pesos_medios;
 
@@ -108,8 +106,7 @@ function quantidade_no_grupo($lote, $grupo, $chave) {
     return null;
 }
 
-// Usa o estoque na ordem de validade (o que vence primeiro sai primeiro) e
-// considera só os lotes que têm unidade compatível (ou conversível) com a da receita.
+
 function consultar_estoque($item, $grupo, $necessario, $chave) {
     $total = 0;
     $validade_usada = null;
